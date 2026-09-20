@@ -4,7 +4,9 @@
   "description": "A full-stack authentication application built to practice **Node.js, Express.js, Angular, Supabase, JWT authentication, OAuth 2.0, Docker, AWS, and CI/CD with GitHub Actions**.",
   "main": "Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server.js",
+    "serve": "nodemon Server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,13 @@
   },
   "homepage": "https://github.com/Shiv392/NodeJS-AWS-CICD-Demo#readme",
   "dependencies": {
+    "axios": "^1.20.0",
     "body-parser": "^2.3.0",
     "cors": "^2.8.6",
     "dotenv": "^18.0.0",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
