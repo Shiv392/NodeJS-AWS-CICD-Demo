@@ -29,4 +29,9 @@ jobs:
 
       - name: Docker Build Image
         run : docker build -t nodejs-aws-cicd-demo:latest .
-        
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+         role-to-assume: ${{ secrets.ECR_PUSH_ROLE_SECRET }}
+         aws-region: us-east-1
