@@ -57,3 +57,16 @@ jobs:
         with:
          role-to-assume: ${{ secrets.ECR_PUSH_ROLE_SECRET }}
          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Tag Docker Image
+        run: |
+          docker tag nodejs-aws-cicd-demo:latest \
+            070443470206.dkr.ecr.us-east-1.amazonaws.com/nodejs-aws-cicd:latest
+
+      - name: Push Docker Image to ECR
+        run: |
+          docker push \
+            070443470206.dkr.ecr.us-east-1.amazonaws.com/nodejs-aws-cicd:latest
