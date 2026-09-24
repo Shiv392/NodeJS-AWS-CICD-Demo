@@ -12,3 +12,6 @@ jobs:
         steps: 
             - name: Say Hello
               run : echo "Hello Shiv Soni! Github actions is working"
+              
+            - name: New step
+              run: echo "This is new Steps"
