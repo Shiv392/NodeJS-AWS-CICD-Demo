@@ -1,17 +1,17 @@
-name: First Github Action
+name: My First GitHub Action
 
-on: 
-    push:
-        branches:
-            - main
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
 
-jobs: 
-    first-job:
-        runs-on: ubuntu-latest
-        steps: 
-            - name: Say Hello
-              run : echo "Hello Shiv Soni! Github actions is working"
-              
-            - name: New step
-              run: echo "This is new Steps"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls -la
