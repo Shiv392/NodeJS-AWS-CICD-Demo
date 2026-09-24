@@ -6,6 +6,7 @@ dotenv.config();
 const port = process.env.SERVER_PORT || 5000;
 
 const TodosRoutes = require("./src/app/Todos/TodosRoutes");
+const PostRoutes = require("./src/app/Posts/PostRoute");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cors({
 }));
 
 app.use("/api/v1/todos", TodosRoutes);
+app.use("/api/v1/posts", PostRoutes);
 
 app.listen(port, ()=>{
     console.log(`server started http://localhost:${port}`);
