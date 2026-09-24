@@ -15,3 +15,14 @@ jobs:
 
       - name: Show files
         run: ls -la
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run : npm test
